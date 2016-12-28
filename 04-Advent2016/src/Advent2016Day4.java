@@ -105,7 +105,8 @@ public class Advent2016Day4 {
 		
 		//using Java 8 stream sorting with a primary and secondary sort
 		mapCharToCount.entrySet().stream()  //gives stream of entry: Stream<Entry<Character,Integer>>
-		.sorted(Map.Entry.<Character,Integer>comparingByValue().reversed()
+		.sorted(Map.Entry.<Character,Integer>comparingByValue()
+		.reversed()
 		.thenComparing(Map.Entry.<Character,Integer>comparingByKey()))
 		.forEachOrdered(x -> sortedList.put(x.getKey(), x.getValue()));
 		
